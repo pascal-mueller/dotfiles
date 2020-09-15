@@ -6,6 +6,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
+set relativenumber 
 set nowrap
 set smartcase
 set noswapfile
@@ -67,3 +68,6 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 " YCM
 nnoremap <silent> <leader>gd :YcmCompleter Goto<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+
+" LaTeX
+autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
